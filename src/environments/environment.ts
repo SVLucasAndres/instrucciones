@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase : {
+  firebaseData : {
     apiKey: "AIzaSyAsMkVVADYF5tXpIWhuo_uDSXWd16bfFFU",
     authDomain: "carlatesis-1d7aa.firebaseapp.com",
     projectId: "carlatesis-1d7aa",
