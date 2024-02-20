@@ -56,7 +56,7 @@
     <ion-text class="txt1">CARLA</ion-text>
     <ion-text class="txt2">Asistente virtual</ion-text>
     <ion-icon name="person-circle-outline" id="info" class="perfil"></ion-icon>
-    <ion-popover trigger="info"   class="pop">
+    <ion-popover trigger="info" class="pop">
       <ng-template>
         <ion-content class="ion-padding">
           <ion-label>USUARIO: </ion-label>
@@ -70,36 +70,36 @@
   </div>
 
   <div class="form-container">
-    <form (ngSubmit)="submitForm()" class="form">
+    <form class="form">
       <ion-item>
-        <ion-label class="figura">Figura</ion-label>
-        <ion-select [(ngModel)]="selectedShape" placeholder="Seleccionar figura">
+        <ion-select name="forma" placeholder="Seleccionar figura" aria-label="Figura" [(ngModel)]="formData.forma" (ngModelChange)="actualizarEstadoBoton()">
           <ion-select-option value="cuadrado">Cuadrado</ion-select-option>
           <ion-select-option value="circulo">Círculo</ion-select-option>
-          <ion-select-option value="triangulo">Triángulo</ion-select-option>
+          <ion-select-option value="triangulo" >Triángulo</ion-select-option>
         </ion-select>
       </ion-item>
   
       <ion-item>
-        <ion-label class="comando">Comando</ion-label>
-        <ion-select [(ngModel)]="selectedCommand" placeholder="Seleccionar comando">
-          <ion-select-option value="comando1">Comando 1</ion-select-option>
-          <ion-select-option value="comando2">Comando 2</ion-select-option>
-          <ion-select-option value="comando3">Comando 3</ion-select-option>
+        <ion-select name="comando" placeholder="Seleccionar comando" aria-label="Comando" [(ngModel)]="formData.comando" (ngModelChange)="actualizarEstadoBoton()">
+          <ion-select-option value="Ir a dormir" >Tienes que dormir (Clave: Sueño)</ion-select-option>
+          <ion-select-option value="Ir a comer" >Tienes que comer (Clave: Comida)</ion-select-option>
+          <ion-select-option value="Ir al baño" >Tienes que ir al baño (Clave: Baño)</ion-select-option>
         </ion-select>
       </ion-item>
-  
       <ion-item>
-        <ion-label class="hora">Hora</ion-label>
-        <ion-datetime presentation="date-time" [preferWheel]="true"></ion-datetime>
+        <ion-label>Color:</ion-label>
+        <input type="color" id="color" name="color" placeholder="color" [(ngModel)]="formData.color" (ngModelChange)="actualizarEstadoBoton()">
       </ion-item>
+      <ion-item>
+        <ion-datetime name="fecha" [(ngModel)]="formData.fecha" displayFormat="YYYY-MM-DDTHH:mm" (ngModelChange)="actualizarEstadoBoton()"></ion-datetime>
+      </ion-item>      
     </form>
   </div>
 
-  <ion-button fil="clear" class="agre" [routerLink]="'/agendar'">
+  <ion-button fil="clear" class="agre" [routerLink]="['/agendar']" [disabled]="botonHabilitado" (click)="agregarTarea()">
  <ion-label class="ta">AGREGAR</ion-label>
   </ion-button>
-  <ion-button fill="clear" class="re"[routerLink]="'/agendar'">
+  <ion-button fill="clear" class="re" [routerLink]="['/prin']">
     <ion-icon name="arrow-back-outline" class="re1"></ion-icon>
   </ion-button>
-  
+</ion-content>

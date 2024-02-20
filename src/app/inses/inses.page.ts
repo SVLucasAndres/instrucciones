@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import axios from 'axios'; 
-import { ToastController } from '@ionic/angular';
+import { AlertController, LoadingController, NavController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular'; 
+import { Firestore,getDoc,doc,docData  } from '@angular/fire/firestore';
+import { collection } from 'firebase/firestore';
 
 @Component({
   selector: 'app-inses',
@@ -12,7 +14,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class InsesPage implements OnInit {
  
-  constructor(private http: HttpClient, private toastController: ToastController,private router: Router, private storage:Storage) { }
+  constructor(private storage:Storage,private loadingCtrl:LoadingController,private toastController: ToastController,private router: NavController, private db:Firestore) { }
 
   formData ={
     user:"",
@@ -34,28 +36,45 @@ export class InsesPage implements OnInit {
   }
 
   botonHabilitado: boolean = false;
-
+  rutauser:any;
+  valueuser:any;
+  usuario:any;
   actualizarEstadoBoton() {
     this.botonHabilitado = this.formData.user !== '' && this.formData.pass !== '';
   }
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Iniciando sesión',
+      duration: 1500
+    });
 
-  obtenerRegistro(){
-    console.log(this.formData);
-    axios.post("http://192.168.1.23:3307/obteneruser.php", this.formData)
-    .then(
-      (response)=>{
-      console.log(response);
-      if(response.data > 0){
-        this.storage.set("ID", JSON.stringify(response.data));
-        this.router.navigate(['/intro']);
-      }else{
-        this.presentToast('bottom');
-      }
-      })
-    .catch((error)=>{
-      console.log(error);
-    })
+    loading.present();
   }
+
   
 
+  async login() {
+    this.showLoading();
+    this.rutauser = doc(this.db,'Registros',this.formData.user);
+    const rutadoc = await getDoc(this.rutauser);
+    const info = rutadoc.data() as datauser;
+    if(rutadoc.exists() && info.usuario == this.formData.user && info.contrasena == this.formData.pass){
+      this.router.navigateForward('prin');
+      this.loadingCtrl.dismiss();
+      this.storage.set("User",this.formData.user);
+    }else{
+      this.loadingCtrl.dismiss();
+      this.presentToast('bottom');
+    }
+  }
+
+  
+  
+
+}
+interface datauser {
+  nombreNino: string;
+  contrasena: string;
+  usuario: string;
+  edadNino: number;
 }

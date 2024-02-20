@@ -40,7 +40,7 @@
   <ion-input color="primary" label="Usuario" label-placement="floating" placeholder="Usuario" class="us" [(ngModel)]="formData.user" (ngModelChange)="actualizarEstadoBoton()" maxlength="20"></ion-input>
   <ion-input label="Contraseña" [(ngModel)]="formData.pass" label-placement="floating" placeholder="Contraseña" type="password" class="con" (ngModelChange)="actualizarEstadoBoton()" maxlength="14"></ion-input>
 
-  <ion-button class="bot" fill="clear" [disabled]="!botonHabilitado" (click)="obtenerRegistro()">
+  <ion-button class="bot" fill="clear" [disabled]="!botonHabilitado" (click)="login()">
     <p class="ses">Iniciar Sesión</p>
   </ion-button>
   <ion-text class="no">¿No tienes una cuenta?</ion-text>

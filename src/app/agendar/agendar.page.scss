@@ -63,10 +63,8 @@ left: 5%;
 top: 16%;
 }
 .cards{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 20%;
+  width: 100%;
+  height: 6rem;
 }
 ion-card{
   --background:#E6D435;  
@@ -74,7 +72,7 @@ ion-card{
   border-radius: 10px;
   margin: 5%;
   width: 90%;
-  height: 10%;
+  height: 6rem;
 }
 ion-card-title{
 position: absolute;
@@ -97,17 +95,14 @@ line-height: normal;
  
 
 }
-
-.conec{
-  color: #FFF;
-font-size: 160%;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-position: fixed;
-
+.div-bot{
+  width:100%;
+  height: 65%;
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-
 .bot{
   --background: #E69E63;
   --color:black;
@@ -118,8 +113,7 @@ position: fixed;
   width: 60px;
   height: 60px;
   position: fixed;
-  right: 10%;
-  bottom: 20.5%;
+  z-index: 9999;
 }
 
 
@@ -132,136 +126,37 @@ position: fixed;
 }
 
 .hom {
- color: #FFF;
- margin-right: 5%;
- margin-left: 5%;
-}
-.casa{
-font-size: 250%;
-}
-.ag {
   color: #FFF;
-  margin-right: 5%;
-  margin-left: 5%;
  }
- .calen{
+ .casa{
  font-size: 250%;
  }
- .cu {
-  color: #FFF;
-  margin-right: 5%;
-  margin-left: 5%;
- }
- .person{
- font-size: 250%;
- }
-
-.toolbar{
-  display: flex;
-  justify-content: space-around;
-  --background: transparent;
-  align-items: baseline;
-}
-.logo{
-  width: 3rem;
-}
-.tool{
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-}
-.div-bot{
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 66%;
-}
-#tab{
-  color: #FFF;
-}
-@media screen and (max-width: 300px) {
-    ion-content {
-      display: flex;
-      width: 430px;
-      height: 932px;
-      padding: 10px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      }
-    
-      .enca{
-        display: flex;
-        margin: 10px;
-      }
-      .txt1{
-    position: absolute;
-    top: 3%;
-    left: 23%;
-    font-size: 130%;
-      }
-      .txt2{
-    position: absolute;
-    top: 6%;
-    left: 23%;
-    font-size: 130%;  
-      }
-      .perfil{
-        font-size: 400%;
-        position: absolute;
-        right: 5%;
-        top: 2%;
-      }
-      ion-popover{
-       margin: 10px;
-     --width:65%;
-     --height:8%;
-     }
-     .tar{
-
-     position: absolute;
-     left: 5%;
-     top: 16%;
-     }
-     .cards{
-         width: 100%;
-         height: 100%;
-         position: absolute;
-         top: 20%;
-     }
-     ion-card{
-       margin: 5%;
-       width: 90%;
-       height: 10%;
-     }
-     ion-card-title{
-     position: absolute;
-     top: 30%;
-     right: 3%;
-     }
-     
-     .fig{
-       position: absolute;
-       top: 5%;
-       left: 5%;
-      
-     
-     }
-     
-     .conec{
-     position: absolute;
-     left: 15%;
-     top: 75%;
-     }
-     ion-fab{
-       position: absolute;
-       top: 73%;
-       left:50%;
-     }
-
-     
-
-    
+ .ag {
+   color: #FFF;
   }
+  .calen{
+  font-size: 250%;
+  }
+  .cu {
+   color: #FFF;
+  }
+  .person{
+  font-size: 250%;
+  }
+ .toolbar{
+   display: flex;
+   justify-content: space-around;
+   --background: transparent;
+ }
+ .logo{
+   width: 3rem;
+ }
+ .tool{
+   display: flex;
+   justify-content: space-around;
+   
+ }
+ 
+ #tab{
+   color: #FFF;
+ }

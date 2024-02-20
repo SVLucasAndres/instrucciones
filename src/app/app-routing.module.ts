@@ -39,15 +39,9 @@ const routes: Routes = [
     path: 'intro5',
     loadChildren: () => import('./intro5/intro5.module').then( m => m.Intro5PageModule)
   },
-
- 
   {
     path: 'agendar',
     loadChildren: () => import('./agendar/agendar.module').then( m => m.AgendarPageModule)
-  },
-  {
-    path: 'agendar2',
-    loadChildren: () => import('./agendar2/agendar2.module').then( m => m.Agendar2PageModule)
   },
   {
     path: 'cuenta',
@@ -56,6 +50,10 @@ const routes: Routes = [
   {
     path: 'prin',
     loadChildren: () => import('./prin/prin.module').then( m => m.PrinPageModule)
+  },
+  {
+    path: 'agendar-page',
+    loadChildren: () => import('./agendar-page/agendar-page.module').then( m => m.AgendarPagePageModule)
   },
 ];
 

@@ -83,23 +83,27 @@
 </ion-content>
 
 <ion-footer>
-  <ion-button class="hom" fill="clear" [routerLink]="'/prin'">
-    <div class="button-content">
-      <ion-icon name="home" class="casa" ></ion-icon>
-      <ion-label class="prin">Principal</ion-label>
+  <ion-toolbar class="toolbar" >
+    <div class="tool">
+      <ion-button  class="hom" fill="clear" [routerLink]="'/prin'">
+        <div class="button-content">
+          <ion-icon  id="tab" name="home-outline" class="casa" ></ion-icon>
+          <ion-label  id="tab" class="prin">Principal</ion-label>
+        </div>
+      </ion-button>
+      <ion-button class="ag" fill="clear" [routerLink]="'/agendar'">
+        <div class="button-content">
+          <ion-icon  id="tab" name="calendar-clear-outline" class="calen"></ion-icon>
+          <ion-label id="tab" >Agendar</ion-label>
+        </div>
+      </ion-button>
+      <ion-button class="cu" fill="clear" [routerLink]="'/cuenta'">
+        <div class="button-content" id=persona>
+          <ion-icon  id="tab" name="person" class="person"></ion-icon>
+          <ion-label id="tab" >Cuenta</ion-label>
+        </div>
+      </ion-button>
     </div>
-  </ion-button>
-  <ion-button class="ag" fill="clear" [routerLink]="'/agendar'">
-    <div class="button-content">
-      <ion-icon name="calendar-clear" class="calen"></ion-icon>
-      <ion-label>Agendar</ion-label>
-    </div>
-  </ion-button>
-  <ion-button class="cu" fill="clear" [routerLink]="'/cuenta'">
-    <div class="button-content">
-      <ion-icon name="person" class="person"></ion-icon>
-      <ion-label>Cuenta</ion-label>
-    </div>
-  </ion-button>
-
+   
+  </ion-toolbar>
 </ion-footer>

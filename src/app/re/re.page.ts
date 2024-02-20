@@ -36,7 +36,7 @@ export class RePage implements OnInit {
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Creando usuario...',
-      duration:3000,
+      duration: 1500
     });
 
     loading.present();
@@ -63,7 +63,9 @@ export class RePage implements OnInit {
     const compro = await getDoc(this.ruta);
     this.showLoading();
     if(compro.exists()){
+      this.loadingCtrl.dismiss();
       this.presentToast('bottom');
+      
     }else{
       
       await setDoc(this.ruta,{usuario:this.formData.user, contrasena:this.formData.pass, nombreNino:this.formData.kidname, edadNino:this.formData.age});

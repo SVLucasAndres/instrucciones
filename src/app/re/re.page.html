@@ -37,7 +37,7 @@
   <ion-text class="inca">Regístrate</ion-text>
 
   <br>
-  <ion-input color="primary" label="Usuario" label-placement="floating" placeholder="Usuario" class="us" [counter]="true" [(ngModel)]="formData.user" (ngModelChange)="actualizarEstadoBoton()" maxlength="20"></ion-input>
+  <ion-input color="primary" label="Correo" label-placement="floating" placeholder="Usuario" class="us" [counter]="true" [(ngModel)]="formData.user" (ngModelChange)="actualizarEstadoBoton()" type="email"></ion-input>
   <ion-input label="Contraseña" [(ngModel)]="formData.pass" [counter]="true" label-placement="floating" placeholder="Contraseña" type="password" class="con" (ngModelChange)="actualizarEstadoBoton()" maxlength="14"></ion-input>
   <ion-input color="primary" label="Nombre del niño" label-placement="floating" placeholder="Nombre del niño" class="us" [counter]="true" [(ngModel)]="formData.kidname" (ngModelChange)="actualizarEstadoBoton()" maxlength="20"></ion-input>
   <ion-input label="Edad del niño" [(ngModel)]="formData.age" [counter]="true" label-placement="floating" placeholder="Edad" type="number" class="us" (ngModelChange)="actualizarEstadoBoton()" maxlength="2"></ion-input>

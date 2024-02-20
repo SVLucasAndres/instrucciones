@@ -19,31 +19,12 @@ export class PrinPage implements OnInit {
 
   async userID(){
     await this.simularPeticionHttp();
-    this.usuarioID = await this.storage.get("ID");
-
-    // Ahora que this.usuarioID se ha establecido correctamente, podemos enviar la solicitud HTTP
-    this.enviarSolicitudHTTP();
+    this.usuarioID = await this.storage.get("User");
   }
 
   async simularPeticionHttp() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     console.log("Petición HTTP simulada completada");
-  }
-
-  enviarSolicitudHTTP() {
-    // Creamos el objeto de datos después de que this.usuarioID se ha establecido correctamente
-    const formData = {
-      id: this.usuarioID
-    };
-
-    // Enviamos la solicitud HTTP
-    axios.post("http://192.168.1.23:3307/obteneruser.php", formData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
   
   ngOnInit() {

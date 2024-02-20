@@ -69,64 +69,16 @@
     </ion-popover>
   </div>
   <ion-label class="tar">TAREAS:</ion-label>
-
-  <div class="cards">
-    <ion-card class="c1" id="c1">
-      <ion-icon name="star-outline" class="fig"></ion-icon>
-      <ion-card-title class="com">TAREA A REALIZAR</ion-card-title>
-    </ion-card>
-    <ion-popover trigger="c1"   class="pop">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <ion-label>TIEMPO RESTANTE: </ion-label>
-          <ion-label>XXXXXXXX</ion-label>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-    <ion-card class="c2" id="c2">
-      <ion-icon name="star-outline" class="fig"></ion-icon>
-      <ion-card-title class="com">TAREA A REALIZAR</ion-card-title>
-    </ion-card>
-    <ion-popover trigger="c2"   class="pop">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <ion-label>TIEMPO RESTANTE: </ion-label>
-          <ion-label>XXXXXXXX</ion-label>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-    <ion-card class="c3" id="c3">
-      <ion-icon name="star-outline" class="fig"></ion-icon>
-      <ion-card-title class="com">TAREA A REALIZAR</ion-card-title>
-    </ion-card>
-    <ion-popover trigger="c3"   class="pop">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <ion-label>TIEMPO RESTANTE: </ion-label>
-          <ion-label>XXXXXXXX</ion-label>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-    <ion-card class="c4" id="c4">
-      <ion-icon name="star-outline" class="fig"></ion-icon>
-      <ion-card-title class="com">TAREA A REALIZAR</ion-card-title>
-    </ion-card>
-    <ion-popover trigger="c4"   class="pop">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <ion-label>TIEMPO RESTANTE: </ion-label>
-          <ion-label>XXXXXXXX</ion-label>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-  </div>
   <div class="div-bot">
-    
-    <div class="div-bot">
-      <ion-label class="conec">AGENDAR: </ion-label>
-      <ion-button class="bot" [routerLink]="['/agendar2']" > <ion-icon name="add-outline"></ion-icon></ion-button>
-    </div>
+    <ion-button class="bot" [routerLink]="['/agendar-page']" > <ion-icon name="add-outline"></ion-icon></ion-button>
+  </div>  
+  <div class="cards" *ngFor="let tarea of tareas">
+    <ion-card [style.background-color]="tarea.color">
+      <ion-icon name="star-outline" class="fig"></ion-icon>
+      <ion-card-title class="com">{{tarea.comando}}</ion-card-title>
+    </ion-card>
   </div>
+    
   
 </ion-content>
 <ion-footer>
@@ -134,7 +86,7 @@
     <div class="tool">
       <ion-button  class="hom" fill="clear" [routerLink]="'/prin'">
         <div class="button-content">
-          <ion-icon  id="tab" name="home" class="casa" ></ion-icon>
+          <ion-icon  id="tab" name="home-outline" class="casa" ></ion-icon>
           <ion-label  id="tab" class="prin">Principal</ion-label>
         </div>
       </ion-button>
@@ -146,7 +98,7 @@
       </ion-button>
       <ion-button class="cu" fill="clear" [routerLink]="'/cuenta'">
         <div class="button-content" id=persona>
-          <ion-icon  id="tab" name="person" class="person"></ion-icon>
+          <ion-icon  id="tab" name="person-outline" class="person"></ion-icon>
           <ion-label id="tab" >Cuenta</ion-label>
         </div>
       </ion-button>

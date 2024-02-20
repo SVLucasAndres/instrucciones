@@ -127,33 +127,40 @@ top: 55%;
 }
 
 .hom {
- color: #FFF;
- margin-right: 5%;
- margin-left: 5%;
-}
-.casa{
-font-size: 250%;
-}
-.ag {
   color: #FFF;
-  margin-right: 5%;
-  margin-left: 5%;
  }
- .calen{
+ .casa{
  font-size: 250%;
  }
- .cu {
-  color: #FFF;
-  margin-right: 5%;
-  margin-left: 5%;
+ .ag {
+   color: #FFF;
+  }
+  .calen{
+  font-size: 250%;
+  }
+  .cu {
+   color: #FFF;
+  }
+  .person{
+  font-size: 250%;
+  }
+ .toolbar{
+   display: flex;
+   justify-content: space-around;
+   --background: transparent;
  }
- .person{
- font-size: 250%;
+ .logo{
+   width: 3rem;
  }
-ion-footer{
-  position: absolute;
-  top: 85%;
-}
+ .tool{
+   display: flex;
+   justify-content: space-around;
+   
+ }
+ 
+ #tab{
+   color: #FFF;
+ }
 
 @media screen and (max-width: 300px) {
     ion-content {
